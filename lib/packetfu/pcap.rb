@@ -126,6 +126,11 @@ module PacketFu
       self.to_a[1,2].map {|x| x.to_s}.join
     end
 
+    # Returns the object in a float form
+    def to_f
+      sec.to_i + (usec.to_i / 1000000.0)
+    end
+
     # Reads a string to populate the object.
     def read(str)
       force_binary(str)
